@@ -1,9 +1,8 @@
 import React from 'react';
-import { Link } from 'gatsby';
 import styled from '@emotion/styled';
 import GlobalStyle from 'components/Common/GlobalStyle';
-import ProfileImage from 'components/Main/ProfileImage';
 import IntroDuction from 'components/Main/IntroDuction';
+import Footer from 'components/Common/Footer';
 
 const Container = styled.div`
   display: flex;
@@ -16,7 +15,7 @@ function IndexPage() {
     <Container>
       <GlobalStyle />
       <IntroDuction />
-      <Link to="/info">To Info</Link>
+      <Footer />
     </Container>
   );
 }

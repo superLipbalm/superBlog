@@ -1,6 +1,8 @@
-import { graphql } from 'gatsby';
+import { graphql, Link } from 'gatsby';
 import React, { FC, ReactElement } from 'react';
 import Text from 'components/Text';
+import { css, Global } from '@emotion/react';
+import styled from '@emotion/styled';
 
 interface InfoPagePorps {
   data: {
@@ -14,6 +16,32 @@ interface InfoPagePorps {
   };
 }
 
+const globalStyle = css`
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+    font-size: 20px;s
+  }
+`;
+
+const Title = css`
+  font-size: 18px;
+  font-weight: 700;
+  color: gray;
+`;
+
+const Desc = styled.div`
+  font-size: 20px;
+  font-weight: 700;
+`;
+
+const Author = styled('div')(() => ({
+  fontSize: '15px',
+  color: 'blue',
+}));
+
 function InfoPage({
   data: {
     site: {
@@ -23,9 +51,11 @@ function InfoPage({
 }: InfoPagePorps) {
   return (
     <div>
-      <Text text={title} />
-      <Text text={description} />
-      <Text text={author} />
+      <Global styles={globalStyle} />
+      <div css={Title}>{title}</div>
+      <Desc>{description}</Desc>
+      <Author>{author}</Author>
+      <Link to="/">To Home</Link>
     </div>
   );
 }

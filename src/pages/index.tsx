@@ -3,6 +3,13 @@ import styled from '@emotion/styled';
 import GlobalStyle from 'components/Common/GlobalStyle';
 import IntroDuction from 'components/Main/IntroDuction';
 import Footer from 'components/Common/Footer';
+import CategoryList from 'components/Main/CategoryList';
+
+const Category_List = {
+  All: 3,
+  Web: 2,
+  App: 1,
+};
 
 const Container = styled.div`
   display: flex;
@@ -15,6 +22,7 @@ function IndexPage() {
     <Container>
       <GlobalStyle />
       <IntroDuction />
+      <CategoryList selectedCategory="Web" categoryList={Category_List} />
       <Footer />
     </Container>
   );

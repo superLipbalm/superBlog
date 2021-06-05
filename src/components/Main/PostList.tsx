@@ -2,15 +2,22 @@ import styled from '@emotion/styled';
 import React from 'react';
 import PostItem from './PostItem';
 
-const POST_ITEM_DATA = {
-  title: 'Post Item Title',
-  date: '2021.01.01',
-  categories: ['Web', 'Frontend'],
-  summary:
-    '이거슨 개츠비 블로그 포스트 아이템 컴포넌트를 위한 목업데이터! 잘나오나요?',
-  thumbnail: 'src/images/profile',
-  link: 'https://www.google.com',
+export type PostType = {
+  node: {
+    id: string;
+    frontmatter: {
+      title: string;
+      summary: string;
+      date: string;
+      categories: string[];
+      thumbnail: string;
+    };
+  };
 };
+
+interface PostListProps {
+  posts: PostType[];
+}
 
 const PostListWrapper = styled.div`
   display: grid;
@@ -27,13 +34,24 @@ const PostListWrapper = styled.div`
   }
 `;
 
-function PostList() {
+function PostList({ posts }: PostListProps) {
   return (
     <PostListWrapper>
-      <PostItem {...POST_ITEM_DATA} />
-      <PostItem {...POST_ITEM_DATA} />
-      <PostItem {...POST_ITEM_DATA} />
-      <PostItem {...POST_ITEM_DATA} />
+      {posts.map(
+        ({
+          node: {
+            id,
+            frontmatter: { thumbnail, ...rest },
+          },
+        }: PostType) => (
+          <PostItem
+            {...rest}
+            thumbnail={thumbnail}
+            link="https://www.google.com"
+            key={id}
+          />
+        ),
+      )}
     </PostListWrapper>
   );
 }

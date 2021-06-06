@@ -23,11 +23,11 @@ const CategoryListWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
   width: 768px;
-  margin: 100px auto 0;
+  margin: 50px auto 10px;
 
   @media (max-width: 768px) {
     width: 100%;
-    margin-top: 50px;
+    margin-top: 25px;
     padding: 0 20px;
   }
 `;
@@ -50,15 +50,16 @@ const CategoryItem = styled(({ active, to, ...props }: GatsbyLinkProps) => (
 function CategoryList({ selectedCategory, categoryList }: CategoryListProps) {
   return (
     <CategoryListWrapper>
-      {Object.entries(categoryList).map(([name, count]) => (
-        <CategoryItem
-          to={`/?category=${name}`}
-          key={name}
-          active={name === selectedCategory}
-        >
-          #{name}({count})
-        </CategoryItem>
-      ))}
+      {categoryList &&
+        Object.entries(categoryList).map(([name, count]) => (
+          <CategoryItem
+            to={`/?category=${name}`}
+            key={name}
+            active={name === selectedCategory}
+          >
+            #{name}({count})
+          </CategoryItem>
+        ))}
     </CategoryListWrapper>
   );
 }

@@ -3,9 +3,11 @@ import React from 'react';
 
 const FooterWrapper = styled.div`
   display: grid;
+  position: relative;
+  bottom: 0;
   place-items: center;
   margin-top: auto;
-  padding: 50px 0;
+  padding: 25px 0;
   font-size: 15px;
   text-align: center;
   line-height: 1.5;

@@ -53,7 +53,7 @@ function PostList({ selectedCategory, posts }: PostListProps) {
 
   return (
     <PostListWrapper>
-      {posts.map(({ node: { id, frontmatter } }: PostType) => (
+      {postListData.map(({ node: { id, frontmatter } }: PostType) => (
         <PostItem {...frontmatter} link="https://www.google.com" key={id} />
       ))}
     </PostListWrapper>

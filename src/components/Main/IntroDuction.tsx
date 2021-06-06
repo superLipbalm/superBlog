@@ -1,6 +1,8 @@
 import styled from '@emotion/styled';
 import React from 'react';
-import ProfileImage from './ProfileImage';
+import ProfileImage, { ProfileImageProps } from './ProfileImage';
+
+type IntroductionProps = ProfileImageProps;
 
 const Background = styled.div`
   width: 100%;
@@ -43,11 +45,11 @@ const SubTitle = styled.div`
   }
 `;
 
-function Introduction() {
+function Introduction({ profileImage }: IntroductionProps) {
   return (
     <Background>
       <Wrapper>
-        <ProfileImage />
+        <ProfileImage profileImage={profileImage} />
         <div>
           <SubTitle>Hello World!</SubTitle>
           <Title>Super Awesome Blog!</Title>

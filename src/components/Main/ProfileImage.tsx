@@ -1,10 +1,12 @@
 import styled from '@emotion/styled';
 import React from 'react';
+import Img, { FluidObject } from 'gatsby-image';
 
-const PROFILE_IMAGE_URL =
-  'https://images.unsplash.com/photo-1484557985045-edf25e08da73?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1567&q=80';
+export interface ProfileImageProps {
+  profileImage: FluidObject;
+}
 
-const ProfileImageWrapper = styled.img`
+const ProfileImageWrapper = styled(Img)`
   width: 120px;
   height: 120px;
   margin-bottom: 30px;
@@ -16,8 +18,8 @@ const ProfileImageWrapper = styled.img`
   }
 `;
 
-function ProfileImage() {
-  return <ProfileImageWrapper src={PROFILE_IMAGE_URL} alt="Profile Image" />;
+function ProfileImage({ profileImage }: ProfileImageProps) {
+  return <ProfileImageWrapper fluid={profileImage} alt="Profile Image" />;
 }
 
 export default ProfileImage;

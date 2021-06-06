@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { FluidObject } from 'gatsby-image';
 import React from 'react';
 import PostItem from './PostItem';
 
@@ -10,7 +11,11 @@ export type PostType = {
       summary: string;
       date: string;
       categories: string[];
-      thumbnail: string;
+      thumbnail: {
+        childImageSharp: {
+          fluid: FluidObject;
+        };
+      };
     };
   };
 };
@@ -37,21 +42,9 @@ const PostListWrapper = styled.div`
 function PostList({ posts }: PostListProps) {
   return (
     <PostListWrapper>
-      {posts.map(
-        ({
-          node: {
-            id,
-            frontmatter: { thumbnail, ...rest },
-          },
-        }: PostType) => (
-          <PostItem
-            {...rest}
-            thumbnail={thumbnail}
-            link="https://www.google.com"
-            key={id}
-          />
-        ),
-      )}
+      {posts.map(({ node: { id, frontmatter } }: PostType) => (
+        <PostItem {...frontmatter} link="https://www.google.com" key={id} />
+      ))}
     </PostListWrapper>
   );
 }

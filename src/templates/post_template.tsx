@@ -1,13 +1,39 @@
 import Template from 'components/Common/Template';
+import PostContent from 'components/Post/PostContent';
+import PostHead, { PostHeadProps } from 'components/Post/PostHead';
 import { graphql } from 'gatsby';
 import React, { ReactElement } from 'react';
 
-interface PostTemplateProps {}
+interface PostTemplateProps {
+  data: {
+    allMarkdownRemark: {
+      edges: [
+        {
+          node: {
+            html: string;
+            frontmatter: PostHeadProps & { summary: string };
+          };
+        },
+      ];
+    };
+  };
+}
 
-function PostTemplate(props: PostTemplateProps): ReactElement {
-  console.log(props);
+function PostTemplate({
+  data: {
+    allMarkdownRemark: { edges },
+  },
+}: PostTemplateProps): ReactElement {
+  const {
+    node: { html, frontmatter },
+  } = edges[0];
 
-  return <Template>Post Template</Template>;
+  return (
+    <Template>
+      <PostHead {...frontmatter} />
+      <PostContent html={html} />
+    </Template>
+  );
 }
 
 export default PostTemplate;

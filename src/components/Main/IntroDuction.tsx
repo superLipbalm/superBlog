@@ -1,8 +1,8 @@
 import styled from '@emotion/styled';
 import React from 'react';
-import ProfileImage, { ProfileImageProps } from './ProfileImage';
-
-type IntroductionProps = ProfileImageProps;
+import ProfileImage, {
+  ProfileImageProps as IntroductionProps,
+} from './ProfileImage';
 
 const Background = styled.div`
   width: 100%;

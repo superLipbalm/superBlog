@@ -1,3 +1,4 @@
+import Template from 'components/Common/Template';
 import { graphql } from 'gatsby';
 import React, { ReactElement } from 'react';
 
@@ -6,7 +7,7 @@ interface PostTemplateProps {}
 function PostTemplate(props: PostTemplateProps): ReactElement {
   console.log(props);
 
-  return <div>Post Template</div>;
+  return <Template>Post Template</Template>;
 }
 
 export default PostTemplate;

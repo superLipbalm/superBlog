@@ -1,6 +1,5 @@
 import { graphql, Link } from 'gatsby';
-import React, { FC, ReactElement } from 'react';
-import Text from 'components/Text';
+import React, { ReactElement } from 'react';
 import { css, Global } from '@emotion/react';
 import styled from '@emotion/styled';
 
@@ -8,9 +7,9 @@ interface InfoPagePorps {
   data: {
     site: {
       siteMetadata: {
-        title: String;
-        description: String;
-        author: String;
+        title: string;
+        description: string;
+        author: string;
       };
     };
   };
@@ -48,7 +47,7 @@ function InfoPage({
       siteMetadata: { title, description, author },
     },
   },
-}: InfoPagePorps) {
+}: InfoPagePorps): ReactElement {
   return (
     <div>
       <Global styles={globalStyle} />

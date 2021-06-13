@@ -43,7 +43,7 @@ const PrevPageIcon = styled.div`
   }
 `;
 
-const PostTitle = styled.div`
+const Title = styled.div`
   display: -webkit-box;
   overflow: hidden;
   overflow-wrap: break-word;
@@ -90,7 +90,7 @@ function PostHeadInfo({
       <PrevPageIcon onClick={goPrevPage}>
         <FontAwesomeIcon icon={faArrowLeft} />
       </PrevPageIcon>
-      <PostTitle>{title}</PostTitle>
+      <Title>{title}</Title>
       <PostData>
         <div>{categories.join(' / ')}</div>
         <div>{date}</div>

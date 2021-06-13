@@ -2,7 +2,8 @@ module.exports = {
   siteMetadata: {
     title: `SuperBlog`,
     description: `SuperLipbalm's super awesome Blog.`,
-    author: `SuperLipbalm`,
+    author: `superLipbalm`,
+    siteUrl: 'https://superLipbalm.github.io',
   },
   plugins: [
     {

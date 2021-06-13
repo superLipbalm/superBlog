@@ -3,6 +3,7 @@ import CommentWidget from 'components/Post/CommentWidget';
 import PostContent from 'components/Post/PostContent';
 import PostHead, { PostHeadProps } from 'components/Post/PostHead';
 import { graphql } from 'gatsby';
+import { FluidObject } from 'gatsby-image';
 import React, { ReactElement } from 'react';
 
 interface PostTemplateProps {
@@ -12,10 +13,24 @@ interface PostTemplateProps {
         {
           node: {
             html: string;
-            frontmatter: PostHeadProps & { summary: string };
+            frontmatter: {
+              title: string;
+              summary: string;
+              date: string;
+              categories: string[];
+              thumbnail: {
+                childImageSharp: {
+                  fluid: FluidObject;
+                };
+                publicURL: string;
+              };
+            };
           };
         },
       ];
+    };
+    location: {
+      href: string;
     };
   };
 }
@@ -23,15 +38,33 @@ interface PostTemplateProps {
 function PostTemplate({
   data: {
     allMarkdownRemark: { edges },
+    location: { href },
   },
 }: PostTemplateProps): ReactElement {
   const {
-    node: { html, frontmatter },
+    node: {
+      html,
+      frontmatter: {
+        title,
+        summary,
+        date,
+        categories,
+        thumbnail: {
+          childImageSharp: { fluid },
+          publicURL,
+        },
+      },
+    },
   } = edges[0];
 
   return (
-    <Template>
-      <PostHead {...frontmatter} />
+    <Template title={title} description={summary} url={href} image={publicURL}>
+      <PostHead
+        title={title}
+        date={date}
+        categories={categories}
+        thumbnail={fluid}
+      />
       <PostContent html={html} />
       <CommentWidget />
     </Template>
@@ -56,6 +89,7 @@ export const queryMarkdownDataBySlug = graphql`
                 fluid(fit: INSIDE, quality: 100) {
                   ...GatsbyImageSharpFluid_withWebp
                 }
+                publicURL
               }
             }
           }

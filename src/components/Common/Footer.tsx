@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
-import React from 'react';
+import React, { ReactElement } from 'react';
 
-const FooterWrapper = styled.div`
+const FooterWrapper = styled.footer`
   display: grid;
   position: relative;
   bottom: 0;
@@ -17,7 +17,7 @@ const FooterWrapper = styled.div`
   }
 `;
 
-function Footer() {
+function Footer(): ReactElement {
   return (
     <FooterWrapper>
       방문해 주셔서 감사합니다! 좋은 하루 보내세요!

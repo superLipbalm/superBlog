@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 import { Link } from 'gatsby';
-import React, { ReactNode } from 'react';
+import React, { ReactElement, ReactNode } from 'react';
 
 export interface CategoryListProps {
   selectedCategory: string;
@@ -47,7 +47,10 @@ const CategoryItem = styled(({ active, to, ...props }: GatsbyLinkProps) => (
 `;
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-function CategoryList({ selectedCategory, categoryList }: CategoryListProps) {
+function CategoryList({
+  selectedCategory,
+  categoryList,
+}: CategoryListProps): ReactElement {
   return (
     <CategoryListWrapper>
       {categoryList &&

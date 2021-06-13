@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import React from 'react';
+import React, { ReactElement } from 'react';
 import ProfileImage, {
   ProfileImageProps as IntroductionProps,
 } from './ProfileImage';
@@ -10,7 +10,7 @@ const Background = styled.div`
   color: #ffffff;
 `;
 
-const IntroductionWrapper = styled.div`
+const IntroductionWrapper = styled.header`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -45,7 +45,7 @@ const SubTitle = styled.div`
   }
 `;
 
-function Introduction({ profileImage }: IntroductionProps) {
+function Introduction({ profileImage }: IntroductionProps): ReactElement {
   return (
     <Background>
       <IntroductionWrapper>

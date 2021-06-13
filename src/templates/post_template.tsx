@@ -1,7 +1,7 @@
 import Template from 'components/Common/Template';
 import CommentWidget from 'components/Post/CommentWidget';
 import PostContent from 'components/Post/PostContent';
-import PostHead, { PostHeadProps } from 'components/Post/PostHead';
+import PostHead from 'components/Post/PostHead';
 import { graphql } from 'gatsby';
 import { FluidObject } from 'gatsby-image';
 import React, { ReactElement } from 'react';
@@ -21,25 +21,27 @@ interface PostTemplateProps {
               thumbnail: {
                 childImageSharp: {
                   fluid: FluidObject;
+                  original: {
+                    src: string;
+                  };
                 };
-                publicURL: string;
               };
             };
           };
         },
       ];
     };
-    location: {
-      href: string;
-    };
+  };
+  location: {
+    href: string;
   };
 }
 
 function PostTemplate({
   data: {
     allMarkdownRemark: { edges },
-    location: { href },
   },
+  location: { href },
 }: PostTemplateProps): ReactElement {
   const {
     node: {
@@ -50,15 +52,17 @@ function PostTemplate({
         date,
         categories,
         thumbnail: {
-          childImageSharp: { fluid },
-          publicURL,
+          childImageSharp: {
+            fluid,
+            original: { src },
+          },
         },
       },
     },
   } = edges[0];
 
   return (
-    <Template title={title} description={summary} url={href} image={publicURL}>
+    <Template title={title} description={summary} url={href} image={src}>
       <PostHead
         title={title}
         date={date}
@@ -89,7 +93,9 @@ export const queryMarkdownDataBySlug = graphql`
                 fluid(fit: INSIDE, quality: 100) {
                   ...GatsbyImageSharpFluid_withWebp
                 }
-                publicURL
+                original {
+                  src
+                }
               }
             }
           }

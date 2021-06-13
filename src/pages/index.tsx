@@ -16,7 +16,7 @@ interface IndexPageProps {
       siteMetadata: {
         title: string;
         description: string;
-        siteURL: string;
+        siteUrl: string;
       };
     };
     allMarkdownRemark: {
@@ -35,7 +35,7 @@ function IndexPage({
   location: { search },
   data: {
     site: {
-      siteMetadata: { title, description, siteURL },
+      siteMetadata: { title, description, siteUrl },
     },
     allMarkdownRemark: { edges },
     file: {
@@ -79,7 +79,7 @@ function IndexPage({
     <Template
       title={title}
       description={description}
-      url={siteURL}
+      url={siteUrl}
       image={publicURL}
     >
       <Introduction profileImage={fluid} />

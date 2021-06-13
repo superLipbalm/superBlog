@@ -10,7 +10,7 @@ const Background = styled.div`
   color: #ffffff;
 `;
 
-const Wrapper = styled.div`
+const IntroductionWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -18,11 +18,11 @@ const Wrapper = styled.div`
   width: 768px;
   height: 400px;
   margin: 0 auto;
+  padding: 0 20px;
 
   @media (max-width: 768px) {
     width: 100%;
     height: 300px;
-    padding: 0 20px;
   }
 `;
 
@@ -48,13 +48,13 @@ const SubTitle = styled.div`
 function Introduction({ profileImage }: IntroductionProps) {
   return (
     <Background>
-      <Wrapper>
+      <IntroductionWrapper>
         <ProfileImage profileImage={profileImage} />
         <div>
           <SubTitle>Hello World!</SubTitle>
           <Title>Super Awesome Blog!</Title>
         </div>
-      </Wrapper>
+      </IntroductionWrapper>
     </Background>
   );
 }

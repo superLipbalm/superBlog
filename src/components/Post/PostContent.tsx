@@ -11,7 +11,8 @@ const MarkdownRenderer = styled.div`
   flex-direction: column;
   width: 768px;
   margin: 0 auto;
-  padding: 100px 10px;
+  padding: 25px 15px;
+  word-break: break-all;
 
   // Markdown
   font-size: 16px;
@@ -110,6 +111,33 @@ const MarkdownRenderer = styled.div`
   code[class*='language-'],
   pre[class*='language-'] {
     tab-size: 2;
+  }
+
+  // Responsive
+  @media (max-width: 768px) {
+    width: 100%;
+    font-size: 14px;
+    line-height: 1.6;
+
+    h1 {
+      font-size: 25px;
+    }
+
+    h2 {
+      font-size: 22px;
+    }
+
+    h3 {
+      font-size: 19px;
+    }
+
+    h4 {
+      font-size: 16px;
+    }
+
+    img {
+      width: 100%;
+    }
   }
 `;
 

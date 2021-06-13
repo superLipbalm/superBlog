@@ -1,3 +1,4 @@
+import styled from '@emotion/styled';
 import React, { createRef, ReactElement, useEffect } from 'react';
 
 const src = 'https://utteranc.es/client.js';
@@ -13,11 +14,15 @@ interface UtterancesAttributesType {
   async: string;
 }
 
+const UtterancesWrapper = styled.div`
+  padding: 0 20px;
+`;
+
 function CommentWidget(): ReactElement {
-  const element = createRef<HTMLDivElement>();
+  const wrapper = createRef<HTMLDivElement>();
 
   useEffect(() => {
-    if (element.current === null) return;
+    if (wrapper.current === null) return;
 
     const utterances: HTMLScriptElement = document.createElement('script');
 
@@ -35,10 +40,10 @@ function CommentWidget(): ReactElement {
       utterances.setAttribute(key, value);
     });
 
-    element.current.appendChild(utterances);
+    wrapper.current.appendChild(utterances);
   }, []);
 
-  return <div ref={element} />;
+  return <UtterancesWrapper ref={wrapper} />;
 }
 
 export default CommentWidget;

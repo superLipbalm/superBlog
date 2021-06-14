@@ -13,13 +13,14 @@ const PostHeadInfoWrapper = styled.div`
   display: flex;
   flex-direction: column;
   width: 768px;
-  height: 100%;
+  height: 350px;
   margin: 0 auto;
   padding: 60px 20px;
   color: #ffffff;
 
   @media (max-width: 768px) {
     width: 100%;
+    height: 300px;
     padding: 40px 20px;
   }
 `;
@@ -45,13 +46,13 @@ const PrevPageIcon = styled.div`
 
 const Title = styled.div`
   display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
   overflow: hidden;
   overflow-wrap: break-word;
   margin-top: auto;
   text-overflow: ellipsis;
   white-space: normal;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
   font-size: 45px;
   font-weight: 800;
 

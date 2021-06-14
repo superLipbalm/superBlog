@@ -2,6 +2,7 @@ import styled from '@emotion/styled';
 import { Link } from 'gatsby';
 import Img, { FluidObject } from 'gatsby-image';
 import React from 'react';
+import { ReactElement } from 'react';
 
 interface PostItemProps {
   title: string;
@@ -45,7 +46,7 @@ const PostItemContent = styled.div`
 const Title = styled.div`
   display: -webkit-box;
   overflow: hidden;
-  margin-bottom: 3px;
+  margin-bottom: 5px;
   text-overflow: ellipsis;
   white-space: normal;
   overflow-wrap: break-word;
@@ -65,6 +66,7 @@ const Category = styled.div`
   display: flex;
   flex-wrap: wrap;
   margin: 10px -5px;
+  margin-bottom: 5px;
 `;
 
 const CategoryItem = styled.div`
@@ -99,19 +101,19 @@ function PostItem({
     childImageSharp: { fluid },
   },
   link,
-}: PostItemProps) {
+}: PostItemProps): ReactElement {
   return (
     <PostItemWrapper to={link}>
       <ThumbnailImage fluid={fluid} alt="Post Item Image" />
       <PostItemContent>
         <Title>{title}</Title>
-        <Date>{date}</Date>
+        <Summary>{summary}</Summary>
         <Category>
           {categories.map(category => (
             <CategoryItem key={category}>{category}</CategoryItem>
           ))}
         </Category>
-        <Summary>{summary}</Summary>
+        <Date>{date}</Date>
       </PostItemContent>
     </PostItemWrapper>
   );

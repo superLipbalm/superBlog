@@ -3,7 +3,7 @@ import { FluidObject } from 'gatsby-image';
 import useInfiniteScroll, {
   useInfiniteScrollType,
 } from 'hooks/useInfiniteScroll';
-import React, { useMemo } from 'react';
+import React, { ReactElement } from 'react';
 import PostItem from './PostItem';
 
 export type PostType = {
@@ -45,7 +45,7 @@ const PostListWrapper = styled.div`
   }
 `;
 
-function PostList({ selectedCategory, posts }: PostListProps) {
+function PostList({ selectedCategory, posts }: PostListProps): ReactElement {
   const { containerRef, postList }: useInfiniteScrollType = useInfiniteScroll(
     selectedCategory,
     posts,

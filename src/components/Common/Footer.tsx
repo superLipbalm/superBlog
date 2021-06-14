@@ -1,4 +1,7 @@
 import styled from '@emotion/styled';
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { Link } from 'gatsby';
 import React, { ReactElement } from 'react';
 
 const FooterWrapper = styled.footer`
@@ -17,11 +20,28 @@ const FooterWrapper = styled.footer`
   }
 `;
 
+const GithubButton = styled(Link)`
+  display: grid;
+  place-items: center;
+  width: 35px;
+  height: 35px;
+  font-size: 33px;
+  color: #485563;
+  cursor: pointer;
+
+  &:hover {
+    font-size: 35px;
+    color: #000000;
+  }
+`;
+
 function Footer(): ReactElement {
   return (
     <FooterWrapper>
-      방문해 주셔서 감사합니다! 좋은 하루 보내세요!
-      <br /> © 2021 SuperLipBalm, powered By Gatsby.
+      <GithubButton to="https://github.com/superLipbalm">
+        <FontAwesomeIcon icon={faGithub} />
+      </GithubButton>
+      © 2021 SuperLipBalm, powered By Gatsby.
     </FooterWrapper>
   );
 }

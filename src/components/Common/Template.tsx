@@ -48,6 +48,12 @@ function Template({
         <meta name="twitter:title" content={title} />
         <meta name="twitter:description" content={description} />
 
+        {/* Google Search Console */}
+        <meta
+          name="google-site-verification"
+          content="_LXggtKnv6c32L-Wqf0Jpi2vcSYWyf7qgpXAmaVtMm8"
+        />
+
         <html lang="ko" />
       </Helmet>
       <GlobalStyle />

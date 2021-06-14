@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-Sitemap: https://superlipbalm.github.io/sitemap/sitemap-index.xml
-Host: https://superlipbalm.github.io

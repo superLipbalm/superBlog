@@ -54,6 +54,12 @@ function Template({
           content="_LXggtKnv6c32L-Wqf0Jpi2vcSYWyf7qgpXAmaVtMm8"
         />
 
+        {/* Naver Search Advisor */}
+        <meta
+          name="naver-site-verification"
+          content="911dca7d80d568846a63b6e6d0ca7fb661b8717a"
+        />
+
         <html lang="ko" />
       </Helmet>
       <GlobalStyle />

@@ -1,5 +1,5 @@
 import { css, Global } from '@emotion/react';
-import React from 'react';
+import React, { ReactElement } from 'react';
 
 const defaultStyle = css`
   * {
@@ -25,7 +25,7 @@ const defaultStyle = css`
   }
 `;
 
-function GlobalStyle() {
+function GlobalStyle(): ReactElement {
   return <Global styles={defaultStyle} />;
 }
 

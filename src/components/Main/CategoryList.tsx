@@ -35,11 +35,13 @@ const CategoryListWrapper = styled.div`
 const CategoryItem = styled(({ active, to, ...props }: GatsbyLinkProps) => (
   <Link to={to} {...props} />
 ))`
-  margin-right: 20px;
+  margin-right: 25px;
   padding: 5px 0;
   font-size: 18px;
-  font-weight: ${({ active }) => (active ? '800' : '400')};
+  font-weight: ${({ active }) => (active ? '800' : '600')};
   cursor: pointer;
+  transform: ${({ active }) => (active ? 'scale(1.2)' : 'scale(1)')};
+  transition: 0.3s transform, 0.3s font-weight;
 
   &:last-of-type {
     margin-right: 0;

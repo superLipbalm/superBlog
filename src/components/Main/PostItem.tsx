@@ -21,7 +21,7 @@ const PostItemWrapper = styled(Link)`
   display: flex;
   flex-direction: column;
   border-radius: 10px;
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
   transition: 0.3s box-shadow;
   cursor: pointer;
 
@@ -73,7 +73,7 @@ const CategoryItem = styled.div`
   margin: 2.5px 5px;
   padding: 3px 5px;
   border-radius: 5px;
-  background: black;
+  background: #29323c;
   font-size: 14px;
   font-weight: 700;
   color: white;

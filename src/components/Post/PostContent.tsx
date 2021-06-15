@@ -67,8 +67,9 @@ const MarkdownRenderer = styled.div`
   blockquote {
     margin: 10px 0;
     padding: 5px 15px;
-    border-left: 2px solid #000000;
-    font-weight: 800;
+    background: #f5f5f5;
+    border-left: 4px solid #485563;
+    font-weight: 600;
   }
 
   // List
@@ -105,6 +106,7 @@ const MarkdownRenderer = styled.div`
   pre[class*='language-'] {
     margin: 10px 0;
     padding: 15px;
+    border-radius: 5px;
     font-size: 15px;
   }
 

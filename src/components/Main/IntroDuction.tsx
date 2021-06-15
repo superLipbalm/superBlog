@@ -50,7 +50,6 @@ function Introduction({ profileImage }: IntroductionProps): ReactElement {
     <Background>
       <IntroductionWrapper>
         <ProfileImage profileImage={profileImage} />
-
         <div>
           <Title>Super Awesome Blog</Title>
           <SubTitle>superLipbalm의 개발블로그!</SubTitle>

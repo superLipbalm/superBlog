@@ -15,6 +15,24 @@ interface InfoPagePorps {
   };
 }
 
+function InfoPage({
+  data: {
+    site: {
+      siteMetadata: { title, description, author },
+    },
+  },
+}: InfoPagePorps): ReactElement {
+  return (
+    <div>
+      <Global styles={globalStyle} />
+      <div css={Title}>{title}</div>
+      <Desc>{description}</Desc>
+      <Author>{author}</Author>
+      <Link to="/">To Home</Link>
+    </div>
+  );
+}
+
 const globalStyle = css`
   * {
     margin: 0;
@@ -40,24 +58,6 @@ const Author = styled('div')(() => ({
   fontSize: '15px',
   color: 'blue',
 }));
-
-function InfoPage({
-  data: {
-    site: {
-      siteMetadata: { title, description, author },
-    },
-  },
-}: InfoPagePorps): ReactElement {
-  return (
-    <div>
-      <Global styles={globalStyle} />
-      <div css={Title}>{title}</div>
-      <Desc>{description}</Desc>
-      <Author>{author}</Author>
-      <Link to="/">To Home</Link>
-    </div>
-  );
-}
 
 export default InfoPage;
 

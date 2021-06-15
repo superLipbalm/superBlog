@@ -13,12 +13,6 @@ interface TemplateProps {
   children: ReactNode;
 }
 
-const Container = styled.main`
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-`;
-
 function Template({
   title,
   description,
@@ -75,5 +69,11 @@ function Template({
     </Container>
   );
 }
+
+const Container = styled.main`
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+`;
 
 export default Template;

@@ -4,6 +4,20 @@ import ProfileImage, {
   ProfileImageProps as IntroductionProps,
 } from './ProfileImage';
 
+function Introduction({ profileImage }: IntroductionProps): ReactElement {
+  return (
+    <Background>
+      <IntroductionWrapper>
+        <ProfileImage profileImage={profileImage} />
+        <div>
+          <Title>Super Awesome Blog</Title>
+          <SubTitle>superLipbalm의 개발블로그!</SubTitle>
+        </div>
+      </IntroductionWrapper>
+    </Background>
+  );
+}
+
 const Background = styled.div`
   width: 100%;
   background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
@@ -44,19 +58,5 @@ const SubTitle = styled.div`
     font-size: 15px;
   }
 `;
-
-function Introduction({ profileImage }: IntroductionProps): ReactElement {
-  return (
-    <Background>
-      <IntroductionWrapper>
-        <ProfileImage profileImage={profileImage} />
-        <div>
-          <Title>Super Awesome Blog</Title>
-          <SubTitle>superLipbalm의 개발블로그!</SubTitle>
-        </div>
-      </IntroductionWrapper>
-    </Background>
-  );
-}
 
 export default Introduction;

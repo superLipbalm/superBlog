@@ -9,6 +9,29 @@ export interface PostHeadInfoProps {
   categories: string[];
 }
 
+function PostHeadInfo({
+  title,
+  date,
+  categories,
+}: PostHeadInfoProps): ReactElement {
+  function goPrevPage() {
+    window.history.back();
+  }
+
+  return (
+    <PostHeadInfoWrapper>
+      <PrevPageIcon onClick={goPrevPage}>
+        <FontAwesomeIcon icon={faArrowLeft} />
+      </PrevPageIcon>
+      <Title>{title}</Title>
+      <PostData>
+        <div>{categories.join(' / ')}</div>
+        <div>{date}</div>
+      </PostData>
+    </PostHeadInfoWrapper>
+  );
+}
+
 const PostHeadInfoWrapper = styled.div`
   display: flex;
   flex-direction: column;
@@ -76,28 +99,5 @@ const PostData = styled.div`
     font-weight: 400;
   }
 `;
-
-function PostHeadInfo({
-  title,
-  date,
-  categories,
-}: PostHeadInfoProps): ReactElement {
-  function goPrevPage() {
-    window.history.back();
-  }
-
-  return (
-    <PostHeadInfoWrapper>
-      <PrevPageIcon onClick={goPrevPage}>
-        <FontAwesomeIcon icon={faArrowLeft} />
-      </PrevPageIcon>
-      <Title>{title}</Title>
-      <PostData>
-        <div>{categories.join(' / ')}</div>
-        <div>{date}</div>
-      </PostData>
-    </PostHeadInfoWrapper>
-  );
-}
 
 export default PostHeadInfo;

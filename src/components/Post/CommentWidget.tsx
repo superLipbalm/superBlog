@@ -1,9 +1,6 @@
 import styled from '@emotion/styled';
 import React, { createRef, ReactElement, useEffect } from 'react';
 
-const src = 'https://utteranc.es/client.js';
-const repo = 'superLipbalm/superBlog';
-
 interface UtterancesAttributesType {
   src: string;
   repo: string;
@@ -13,10 +10,6 @@ interface UtterancesAttributesType {
   crossorigin: string;
   async: string;
 }
-
-const UtterancesWrapper = styled.div`
-  padding: 0 20px;
-`;
 
 function CommentWidget(): ReactElement {
   const wrapper = createRef<HTMLDivElement>();
@@ -45,5 +38,12 @@ function CommentWidget(): ReactElement {
 
   return <UtterancesWrapper ref={wrapper} />;
 }
+
+const UtterancesWrapper = styled.div`
+  padding: 0 20px;
+`;
+
+const src = 'https://utteranc.es/client.js';
+const repo = 'superLipbalm/superBlog';
 
 export default CommentWidget;

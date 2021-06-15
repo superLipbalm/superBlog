@@ -4,6 +4,17 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Link } from 'gatsby';
 import React, { ReactElement } from 'react';
 
+function Footer(): ReactElement {
+  return (
+    <FooterWrapper>
+      <GithubButton to="https://github.com/superLipbalm">
+        <FontAwesomeIcon icon={faGithub} />
+      </GithubButton>
+      © 2021 SuperLipBalm, powered By Gatsby.
+    </FooterWrapper>
+  );
+}
+
 const FooterWrapper = styled.footer`
   display: grid;
   position: relative;
@@ -34,16 +45,5 @@ const GithubButton = styled(Link)`
     color: #000000;
   }
 `;
-
-function Footer(): ReactElement {
-  return (
-    <FooterWrapper>
-      <GithubButton to="https://github.com/superLipbalm">
-        <FontAwesomeIcon icon={faGithub} />
-      </GithubButton>
-      © 2021 SuperLipBalm, powered By Gatsby.
-    </FooterWrapper>
-  );
-}
 
 export default Footer;

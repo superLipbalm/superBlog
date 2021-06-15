@@ -17,6 +17,33 @@ interface PostItemProps {
   link: string;
 }
 
+function PostItem({
+  title,
+  date,
+  categories,
+  summary,
+  thumbnail: {
+    childImageSharp: { fluid },
+  },
+  link,
+}: PostItemProps): ReactElement {
+  return (
+    <PostItemWrapper to={link}>
+      <ThumbnailImage fluid={fluid} alt="Post Item Image" />
+      <PostItemContent>
+        <Title>{title}</Title>
+        <Summary>{summary}</Summary>
+        <Category>
+          {categories.map(category => (
+            <CategoryItem key={category}>{category}</CategoryItem>
+          ))}
+        </Category>
+        <Date>{date}</Date>
+      </PostItemContent>
+    </PostItemWrapper>
+  );
+}
+
 const PostItemWrapper = styled(Link)`
   display: flex;
   flex-direction: column;
@@ -91,32 +118,5 @@ const Summary = styled.div`
   font-size: 16px;
   opacity: 0.8;
 `;
-
-function PostItem({
-  title,
-  date,
-  categories,
-  summary,
-  thumbnail: {
-    childImageSharp: { fluid },
-  },
-  link,
-}: PostItemProps): ReactElement {
-  return (
-    <PostItemWrapper to={link}>
-      <ThumbnailImage fluid={fluid} alt="Post Item Image" />
-      <PostItemContent>
-        <Title>{title}</Title>
-        <Summary>{summary}</Summary>
-        <Category>
-          {categories.map(category => (
-            <CategoryItem key={category}>{category}</CategoryItem>
-          ))}
-        </Category>
-        <Date>{date}</Date>
-      </PostItemContent>
-    </PostItemWrapper>
-  );
-}
 
 export default PostItem;

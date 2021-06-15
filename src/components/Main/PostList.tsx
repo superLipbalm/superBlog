@@ -31,20 +31,6 @@ interface PostListProps {
   posts: PostType[];
 }
 
-const PostListWrapper = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 20px;
-  width: 768px;
-  margin: 0 auto;
-  padding: 10px 20px;
-
-  @media (max-width: 768px) {
-    grid-template-columns: 1fr;
-    width: 100%;
-  }
-`;
-
 function PostList({ selectedCategory, posts }: PostListProps): ReactElement {
   const { containerRef, postList }: useInfiniteScrollType = useInfiniteScroll(
     selectedCategory,
@@ -67,5 +53,19 @@ function PostList({ selectedCategory, posts }: PostListProps): ReactElement {
     </PostListWrapper>
   );
 }
+
+const PostListWrapper = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
+  width: 768px;
+  margin: 0 auto;
+  padding: 10px 20px;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    width: 100%;
+  }
+`;
 
 export default PostList;

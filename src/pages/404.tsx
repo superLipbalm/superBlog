@@ -3,6 +3,19 @@ import { Link } from 'gatsby';
 import React from 'react';
 import GlobalStyle from '../components/Common/GlobalStyle';
 
+function NotFoundPage() {
+  return (
+    <NotFoundPageWrapper>
+      <GlobalStyle />
+      <Text>404</Text>
+      <Description>
+        찾을 수 없는 페이지입니다. <br />
+      </Description>
+      <GoToMainButton to="/">메인으로</GoToMainButton>
+    </NotFoundPageWrapper>
+  );
+}
+
 const NotFoundPageWrapper = styled.div`
   display: flex;
   flex-direction: column;
@@ -35,18 +48,5 @@ const GoToMainButton = styled(Link)`
   font-size: 20px;
   text-decoration: underline;
 `;
-
-function NotFoundPage() {
-  return (
-    <NotFoundPageWrapper>
-      <GlobalStyle />
-      <Text>404</Text>
-      <Description>
-        찾을 수 없는 페이지입니다. <br />
-      </Description>
-      <GoToMainButton to="/">메인으로</GoToMainButton>
-    </NotFoundPageWrapper>
-  );
-}
 
 export default NotFoundPage;

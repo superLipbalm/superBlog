@@ -5,6 +5,10 @@ interface PostContentProps {
   html: string;
 }
 
+function PostContent({ html }: PostContentProps): ReactElement {
+  return <MarkdownRenderer dangerouslySetInnerHTML={{ __html: html }} />;
+}
+
 const MarkdownRenderer = styled.div`
   // Renderer
   display: flex;
@@ -142,9 +146,5 @@ const MarkdownRenderer = styled.div`
     }
   }
 `;
-
-function PostContent({ html }: PostContentProps): ReactElement {
-  return <MarkdownRenderer dangerouslySetInnerHTML={{ __html: html }} />;
-}
 
 export default PostContent;

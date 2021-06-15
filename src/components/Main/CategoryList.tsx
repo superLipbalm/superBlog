@@ -19,6 +19,26 @@ type GatsbyLinkProps = {
   to: string;
 } & CategoryItemProps;
 
+function CategoryList({
+  selectedCategory,
+  categoryList,
+}: CategoryListProps): ReactElement {
+  return (
+    <CategoryListWrapper>
+      {categoryList &&
+        Object.entries(categoryList).map(([name, count]) => (
+          <CategoryItem
+            to={`/?category=${name}`}
+            key={name}
+            active={name === selectedCategory}
+          >
+            #{name}({count})
+          </CategoryItem>
+        ))}
+    </CategoryListWrapper>
+  );
+}
+
 const CategoryListWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
@@ -47,26 +67,5 @@ const CategoryItem = styled(({ active, to, ...props }: GatsbyLinkProps) => (
     margin-right: 0;
   }
 `;
-
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-function CategoryList({
-  selectedCategory,
-  categoryList,
-}: CategoryListProps): ReactElement {
-  return (
-    <CategoryListWrapper>
-      {categoryList &&
-        Object.entries(categoryList).map(([name, count]) => (
-          <CategoryItem
-            to={`/?category=${name}`}
-            key={name}
-            active={name === selectedCategory}
-          >
-            #{name}({count})
-          </CategoryItem>
-        ))}
-    </CategoryListWrapper>
-  );
-}
 
 export default CategoryList;

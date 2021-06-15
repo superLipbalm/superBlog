@@ -1,7 +1,11 @@
 import styled from '@emotion/styled';
-import React, { ReactElement } from 'react';
+import React, { ReactChild, ReactElement } from 'react';
 
-function StyledScrollBar({ children }): ReactElement {
+interface StyledScrollBarProps {
+  children: ReactChild;
+}
+
+function StyledScrollBar({ children }: StyledScrollBarProps): ReactElement {
   return <ScrollBar>{children}</ScrollBar>;
 }
 

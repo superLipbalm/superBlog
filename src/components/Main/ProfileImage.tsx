@@ -1,9 +1,14 @@
 import styled from '@emotion/styled';
 import React from 'react';
 import Img, { FluidObject } from 'gatsby-image';
+import { ReactElement } from 'react';
 
 export interface ProfileImageProps {
   profileImage: FluidObject;
+}
+
+function ProfileImage({ profileImage }: ProfileImageProps): ReactElement {
+  return <ProfileImageWrapper fluid={profileImage} alt="Profile Image" />;
 }
 
 const ProfileImageWrapper = styled(Img)`
@@ -17,9 +22,5 @@ const ProfileImageWrapper = styled(Img)`
     height: 80px;
   }
 `;
-
-function ProfileImage({ profileImage }: ProfileImageProps) {
-  return <ProfileImageWrapper fluid={profileImage} alt="Profile Image" />;
-}
 
 export default ProfileImage;

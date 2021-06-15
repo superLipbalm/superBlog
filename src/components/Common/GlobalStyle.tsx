@@ -1,6 +1,10 @@
 import { css, Global } from '@emotion/react';
 import React, { ReactElement } from 'react';
 
+function GlobalStyle(): ReactElement {
+  return <Global styles={defaultStyle} />;
+}
+
 const defaultStyle = css`
   * {
     @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
@@ -24,9 +28,5 @@ const defaultStyle = css`
     cursor: pointer;
   }
 `;
-
-function GlobalStyle(): ReactElement {
-  return <Global styles={defaultStyle} />;
-}
 
 export default GlobalStyle;

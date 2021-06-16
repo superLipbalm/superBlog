@@ -84,5 +84,14 @@ module.exports = {
         policy: [{ userAgent: '*', allow: '/' }],
       },
     },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: 'SuperAwesomeBlog',
+        short_name: 'SuperBlog',
+        start_url: '/',
+        icon: 'src/images/favicon.png',
+      },
+    },
   ],
 };

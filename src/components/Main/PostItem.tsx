@@ -46,9 +46,9 @@ function PostItem({
 
 const PostItemWrapper = styled(Link)`
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   border-radius: 10px;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  // box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
   transition: 0.3s box-shadow;
   cursor: pointer;
 
@@ -58,16 +58,19 @@ const PostItemWrapper = styled(Link)`
 `;
 
 const ThumbnailImage = styled(Img)`
-  width: 100%;
-  height: 200px;
-  border-radius: 10px 10px 0 0;
+  width: 200px;
+  border-radius: 10px;
+
+  @media (max-width: 768px) {
+    width: 100px;
+  }
 `;
 
 const PostItemContent = styled.div`
   display: flex;
   flex: 1;
   flex-direction: column;
-  padding: 15px;
+  padding: 15px 30px;
 `;
 
 const Title = styled.div`
@@ -92,8 +95,8 @@ const Date = styled.div`
 const Category = styled.div`
   display: flex;
   flex-wrap: wrap;
-  margin: 10px -5px;
-  margin-bottom: 5px;
+  margin: 5px -5px;
+  margin-top: auto;
 `;
 
 const CategoryItem = styled.div`
@@ -108,7 +111,7 @@ const CategoryItem = styled.div`
 
 const Summary = styled.div`
   display: -webkit-box;
-  margin-top: auto;
+  margin-top: 5px;
   overflow: hidden;
   overflow-wrap: break-word;
   text-overflow: ellipsis;

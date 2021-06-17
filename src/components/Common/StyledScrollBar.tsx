@@ -1,8 +1,8 @@
 import styled from '@emotion/styled';
-import React, { ReactChild, ReactElement } from 'react';
+import React, { ReactElement, ReactNode } from 'react';
 
 interface StyledScrollBarProps {
-  children: ReactChild;
+  children: ReactNode;
 }
 
 function StyledScrollBar({ children }: StyledScrollBarProps): ReactElement {
@@ -10,7 +10,7 @@ function StyledScrollBar({ children }: StyledScrollBarProps): ReactElement {
 }
 
 const ScrollBar = styled.div`
-  overflow: scroll;
+  overflow: auto;
 
   &::-webkit-scrollbar {
     width: 10px;

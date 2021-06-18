@@ -59,10 +59,12 @@ const PostItemWrapper = styled(Link)`
 
 const ThumbnailImage = styled(Img)`
   width: 200px;
+  height: 200px;
   border-radius: 10px;
 
   @media (max-width: 768px) {
     width: 100px;
+    height: 100px;
   }
 `;
 

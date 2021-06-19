@@ -47,13 +47,17 @@ function PostItem({
 const PostItemWrapper = styled(Link)`
   display: flex;
   flex-direction: row;
+  max-height: 200px;
   border-radius: 10px;
-  // box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
   transition: 0.3s box-shadow;
   cursor: pointer;
 
   &:hover {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  }
+
+  @media (max-width: 768px) {
+    max-height: 150px;
   }
 `;
 
@@ -63,8 +67,8 @@ const ThumbnailImage = styled(Img)`
   border-radius: 10px;
 
   @media (max-width: 768px) {
-    width: 100px;
-    height: 100px;
+    width: 150px;
+    height: 100%;
   }
 `;
 

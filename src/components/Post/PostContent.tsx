@@ -97,8 +97,8 @@ const MarkdownRenderer = styled.div`
 
   // Horizontal Rule
   hr {
-    border: 1px solid #000000;
-    margin: 10px 0;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    margin-bottom: 5px;
   }
 
   // Anchor

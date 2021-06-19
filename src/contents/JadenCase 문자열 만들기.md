@@ -8,6 +8,8 @@ thumbnail: '../images/programmers_level2.png'
 
 ## 문제
 
+---
+
 > 출처: 프로그래머스 코딩테스트 연습, JadenCase 문자열 만들기<br> > https://programmers.co.kr/learn/courses/30/lessons/12951
 
 ### 문제 설명
@@ -29,6 +31,8 @@ JadenCase란 모든 단어의 첫 문자가 대문자이고, 그 외의 알파�
 
 ## 코드
 
+---
+
 ```
 function solution(s) {
     return s.toLowerCase()
@@ -40,6 +44,8 @@ function solution(s) {
 ```
 
 ## 풀이
+
+---
 
 - 첫 문자를 제외하고는 모두 소문자여야 하므로, 우선 문자열을 toLowerCase() 메서드로 문자열을 소문자로 변환한다.
 - 그 후 문자열을 공백으로 구분하여 각 단어를 파싱한다.

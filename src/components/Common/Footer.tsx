@@ -1,13 +1,12 @@
 import styled from '@emotion/styled';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Link } from 'gatsby';
 import React, { ReactElement } from 'react';
 
 function Footer(): ReactElement {
   return (
     <FooterWrapper>
-      <GithubButton to="https://github.com/superLipbalm">
+      <GithubButton href="https://github.com/superLipbalm">
         <FontAwesomeIcon icon={faGithub} />
       </GithubButton>
       © 2021 SuperLipBalm, powered By Gatsby.
@@ -31,7 +30,7 @@ const FooterWrapper = styled.footer`
   }
 `;
 
-const GithubButton = styled(Link)`
+const GithubButton = styled.a`
   display: grid;
   place-items: center;
   width: 35px;

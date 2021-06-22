@@ -2,7 +2,8 @@ import Template from 'components/Common/Template';
 import CommentWidget from 'components/Post/CommentWidget';
 import PostContent from 'components/Post/PostContent';
 import PostHead from 'components/Post/PostHead';
-import { graphql } from 'gatsby';
+import PostNav from 'components/Post/PostNav';
+import { graphql, Link } from 'gatsby';
 import { FluidObject } from 'gatsby-image';
 import React, { ReactElement } from 'react';
 
@@ -35,6 +36,10 @@ interface PostTemplateProps {
   location: {
     href: string;
   };
+  pageContext: {
+    next?: string;
+    prev?: string;
+  };
 }
 
 function PostTemplate({
@@ -42,6 +47,7 @@ function PostTemplate({
     allMarkdownRemark: { edges },
   },
   location: { href },
+  pageContext: { next, prev },
 }: PostTemplateProps): ReactElement {
   const {
     node: {
@@ -70,6 +76,7 @@ function PostTemplate({
         thumbnail={fluid}
       />
       <PostContent html={html} />
+      <PostNav prev={prev} next={next} />
       <CommentWidget />
     </Template>
   );

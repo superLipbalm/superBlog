@@ -27,7 +27,7 @@ function PostNav({ prev, next }: PostNavProps): ReactElement {
         </NavItem>
       )}
       {next && (
-        <NavItem to={next}>
+        <NavItem to={next} style={{ marginLeft: 'auto' }}>
           <NextPostInfo>
             다음 포스트<PostTitle>{nextPostTitle}</PostTitle>
           </NextPostInfo>
@@ -42,7 +42,6 @@ function PostNav({ prev, next }: PostNavProps): ReactElement {
 
 const PostNavWrapper = styled.div`
   display: flex;
-  justify-content: space-between;
   align-items: center;
   width: 768px;
   height: 200px;

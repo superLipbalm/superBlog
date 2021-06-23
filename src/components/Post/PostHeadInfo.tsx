@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
-import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
+import { faHome } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { Link } from 'gatsby';
 import React, { ReactElement } from 'react';
 
 export interface PostHeadInfoProps {
@@ -14,15 +15,11 @@ function PostHeadInfo({
   date,
   categories,
 }: PostHeadInfoProps): ReactElement {
-  function goPrevPage() {
-    window.history.back();
-  }
-
   return (
     <PostHeadInfoWrapper>
-      <PrevPageIcon onClick={goPrevPage}>
-        <FontAwesomeIcon icon={faArrowLeft} />
-      </PrevPageIcon>
+      <GoHomeIcon to="/">
+        <FontAwesomeIcon icon={faHome} />
+      </GoHomeIcon>
       <Title>{title}</Title>
       <PostData>
         <div>{categories.join(' / ')}</div>
@@ -48,7 +45,7 @@ const PostHeadInfoWrapper = styled.div`
   }
 `;
 
-const PrevPageIcon = styled.div`
+const GoHomeIcon = styled(Link)`
   display: grid;
   place-items: center;
   width: 40px;
@@ -59,6 +56,10 @@ const PrevPageIcon = styled.div`
   font-size: 22px;
   cursor: pointer;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+
+  &:hover {
+    color: #000000;
+  }
 
   @media (max-width: 768px) {
     width: 30px;

@@ -40,31 +40,6 @@ function PostNav({ prev, next }: PostNavProps): ReactElement {
   );
 }
 
-const PostNavWrapper = styled.div`
-  display: flex;
-  align-items: center;
-  width: 768px;
-  height: 200px;
-  margin: 0 auto;
-
-  @media (max-width: 768px) {
-    width: 100%;
-  }
-`;
-
-const NavItem = styled(Link)`
-  display: flex;
-  align-items: center;
-  width: 320px;
-  padding: 15px;
-  border-radius: 5px;
-  background-color: #f5f5f5;
-
-  @media (max-width: 768px) {
-    width: 225px;
-  }
-`;
-
 const PrevPostInfo = styled.div`
   display: flex;
   flex-direction: column;
@@ -103,11 +78,50 @@ const ButtonIcon = styled.div`
   color: #000000;
   font-size: 22px;
   cursor: pointer;
+  transition: transform 0.15s ease;
 
   @media (max-width: 768px) {
     width: 30px;
     height: 30px;
     font-size: 18px;
+  }
+`;
+
+const NavItem = styled(Link)`
+  display: flex;
+  align-items: center;
+  width: 320px;
+  padding: 15px;
+  border-radius: 5px;
+  background-color: #f5f5f5;
+  transition: background-color 0.15s ease;
+
+  &:hover {
+    background-color: #e5e5e5;
+  }
+
+  &:hover ${ButtonIcon} {
+    transform: translateX(-5px);
+  }
+
+  &:hover ${NextPostInfo} + ${ButtonIcon} {
+    transform: translateX(5px);
+  }
+
+  @media (max-width: 768px) {
+    width: 225px;
+  }
+`;
+
+const PostNavWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  width: 768px;
+  height: 200px;
+  margin: 0 auto;
+
+  @media (max-width: 768px) {
+    width: 100%;
   }
 `;
 

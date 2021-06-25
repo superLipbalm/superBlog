@@ -3,6 +3,7 @@ import React, { ReactElement, ReactNode } from 'react';
 import { Helmet } from 'react-helmet';
 import Footer from './Footer';
 import GlobalStyle from './GlobalStyle';
+import Search from './Search';
 import StyledScrollBar from './StyledScrollBar';
 
 interface TemplateProps {
@@ -59,6 +60,7 @@ function Template({
       </Helmet>
       <GlobalStyle />
       <StyledScrollBar>
+        <Search />
         {children}
         <Footer />
       </StyledScrollBar>

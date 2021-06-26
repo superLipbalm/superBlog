@@ -113,7 +113,7 @@ function Search(): ReactElement {
         </SearchIcon>
         <SearchInput
           type="text"
-          placeholder="검색어를 입력해주세요."
+          placeholder="검색어를 입력해주세요"
           aria-label="Search"
           onChange={handleInputChange}
         />
@@ -168,6 +168,10 @@ const SearchInput = styled.input`
   &:focus {
     outline: none;
   }
+
+  @media (max-width: 768px) {
+    width: 200px;
+  }
 `;
 
 const SearchResultList = styled.div`
@@ -194,6 +198,10 @@ const SearchResultItem = styled(Link)`
     border-bottom: none;
     transform: scale(1.05);
     box-shadow: 0 0 5px rgba(50, 60, 70, 0.5);
+  }
+
+  @media (max-width: 768px) {
+    width: 200px;
   }
 `;
 

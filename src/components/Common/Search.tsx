@@ -1,9 +1,9 @@
-import { faSearch } from '@fortawesome/free-solid-svg-icons';
+import styled from '@emotion/styled';
+import { faHome, faSearch } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { PostType } from 'components/Main/PostList';
 import { graphql, Link, useStaticQuery } from 'gatsby';
-import React, { ChangeEvent, SetStateAction } from 'react';
-import { Dispatch } from 'react';
+import React, { ChangeEvent } from 'react';
 import { useState } from 'react';
 import { ReactElement } from 'react';
 
@@ -109,19 +109,88 @@ function Search(): ReactElement {
   }
 
   return (
-    <div>
-      <form>
-        <FontAwesomeIcon icon={faSearch} />
-        <input
+    <SearchWrapper>
+      <HomeButton to={'/'}>
+        <FontAwesomeIcon icon={faHome} />
+      </HomeButton>
+      <SearchForm>
+        <SearchIcon>
+          <FontAwesomeIcon icon={faSearch} />
+        </SearchIcon>
+        <SearchInput
           type="text"
           placeholder="검색어를 입력해주세요."
           aria-label="Search"
           onChange={handleInputChange}
         />
-      </form>
-      {renderSearchResults()}
-    </div>
+      </SearchForm>
+      <SearchResultList>{renderSearchResults()}</SearchResultList>
+    </SearchWrapper>
   );
 }
+
+const SearchWrapper = styled.div`
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  z-index: 100;
+`;
+
+const SearchForm = styled.form`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 40px;
+  background-color: #29323c;
+`;
+
+const SearchIcon = styled.div`
+  display: grid;
+  place-items: center;
+  width: 20px;
+  height: 20px;
+  font-size: 18px;
+  color: rgba(150, 150, 150, 0.8);
+`;
+
+const SearchInput = styled.input`
+  margin-left: 10px;
+  padding: 3px 0;
+  color: #e0e0e0;
+  font-size: 16px;
+  font-weight: 600;
+  text-align: center;
+  border: none;
+  border-bottom: 1px solid rgba(150, 150, 150, 0.8);
+  background: none;
+
+  &::placeholder {
+    color: rgba(150, 150, 150, 0.8);
+  }
+
+  &:focus {
+    outline: none;
+  }
+`;
+
+const SearchResultList = styled.div``;
+
+const HomeButton = styled(Link)`
+  display: grid;
+  place-items: center;
+  position: absolute;
+  top: 10px;
+  left: 15px;
+  width: 20px;
+  height: 20px;
+  font-size: 18px;
+  color: rgba(150, 150, 150, 0.8);
+  cursor: pointer;
+
+  &:hover {
+    color: rgba(150, 150, 150, 0.8);
+  }
+`;
 
 export default Search;

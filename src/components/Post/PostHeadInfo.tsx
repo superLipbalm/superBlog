@@ -1,7 +1,4 @@
 import styled from '@emotion/styled';
-import { faHome } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Link } from 'gatsby';
 import React, { ReactElement } from 'react';
 
 export interface PostHeadInfoProps {

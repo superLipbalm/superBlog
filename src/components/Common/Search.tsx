@@ -92,17 +92,11 @@ function Search(): ReactElement {
         const { title, date, summary } = node.frontmatter;
 
         return (
-          <Link to={slug} key={slug}>
-            <header>
-              <h2>{title}</h2>
-            </header>
-            <section>
-              <p>{summary}</p>
-            </section>
-            <p>
-              <em>{date}</em>
-            </p>
-          </Link>
+          <SearchResultItem to={slug} key={slug}>
+            <Title>{title}</Title>
+            <Summary>{summary}</Summary>
+            <Date>{date}</Date>
+          </SearchResultItem>
         );
       })
     );
@@ -143,6 +137,7 @@ const SearchForm = styled.form`
   width: 100%;
   height: 40px;
   background-color: #29323c;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
 `;
 
 const SearchIcon = styled.div`
@@ -155,6 +150,7 @@ const SearchIcon = styled.div`
 `;
 
 const SearchInput = styled.input`
+  width: 280px;
   margin-left: 10px;
   padding: 3px 0;
   color: #e0e0e0;
@@ -174,7 +170,57 @@ const SearchInput = styled.input`
   }
 `;
 
-const SearchResultList = styled.div``;
+const SearchResultList = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
+const SearchResultItem = styled(Link)`
+  width: 280px;
+  margin-left: 30px;
+  padding: 6px;
+  background-color: #29323c;
+  border-bottom: 1px solid #39424c;
+  color: #e0e0e0;
+  transition: transform 0.3s ease;
+
+  &:last-child {
+    border-radius: 0 0 3px 3px;
+  }
+
+  &:hover {
+    color: #e0e0e0;
+    border-bottom: none;
+    transform: scale(1.05);
+    box-shadow: 0 0 5px rgba(50, 60, 70, 0.5);
+  }
+`;
+
+const Title = styled.h2`
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+
+  font-size: 18px;
+`;
+
+const Summary = styled.p`
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  margin-top: 5px;
+
+  font-size: 15px;
+  color: #d0d0d0;
+`;
+
+const Date = styled.em`
+  font-size: 12px;
+  color: rgba(150, 150, 150, 0.8);
+`;
 
 const HomeButton = styled(Link)`
   display: grid;

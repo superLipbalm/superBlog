@@ -67,8 +67,7 @@ const ThumbnailImage = styled(Img)`
   border-radius: 10px;
 
   @media (max-width: 768px) {
-    width: 150px;
-    height: 100%;
+    display: none;
   }
 `;
 
@@ -82,12 +81,9 @@ const PostItemContent = styled.div`
 const Title = styled.div`
   display: -webkit-box;
   overflow: hidden;
-  margin-bottom: 5px;
-  text-overflow: ellipsis;
-  white-space: normal;
-  overflow-wrap: break-word;
-  -webkit-line-clamp: 2;
+  -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
+  margin-bottom: 5px;
   font-size: 20px;
   font-weight: 700;
 `;
@@ -100,12 +96,19 @@ const Date = styled.div`
 
 const Category = styled.div`
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: no-wrap;
+  overflow-x: scroll;
+  overflow-y: hidden;
   margin: 5px -5px;
   margin-top: auto;
 `;
 
 const CategoryItem = styled.div`
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  flex: 0 0 auto;
   margin: 2.5px 5px;
   padding: 3px 5px;
   border-radius: 5px;
@@ -117,15 +120,16 @@ const CategoryItem = styled.div`
 
 const Summary = styled.div`
   display: -webkit-box;
-  margin-top: 5px;
   overflow: hidden;
-  overflow-wrap: break-word;
-  text-overflow: ellipsis;
-  white-space: normal;
-  -webkit-line-clamp: 2;
+  -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
+  margin-top: 5px;
   font-size: 16px;
   opacity: 0.8;
+
+  @media (max-width: 768px) {
+    -webkit-line-clamp: 1;
+  }
 `;
 
 export default PostItem;

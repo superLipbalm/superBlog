@@ -1,7 +1,4 @@
 import styled from '@emotion/styled';
-import { faHome } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Link } from 'gatsby';
 import React, { ReactElement } from 'react';
 
 export interface PostHeadInfoProps {
@@ -17,9 +14,6 @@ function PostHeadInfo({
 }: PostHeadInfoProps): ReactElement {
   return (
     <PostHeadInfoWrapper>
-      <GoHomeIcon to="/">
-        <FontAwesomeIcon icon={faHome} />
-      </GoHomeIcon>
       <Title>{title}</Title>
       <PostData>
         <div>{categories.join(' / ')}</div>
@@ -45,28 +39,28 @@ const PostHeadInfoWrapper = styled.div`
   }
 `;
 
-const GoHomeIcon = styled(Link)`
-  display: grid;
-  place-items: center;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background: #ffffff;
-  color: #000000;
-  font-size: 22px;
-  cursor: pointer;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+// const HomeButton = styled(Link)`
+//   display: grid;
+//   place-items: center;
+//   width: 40px;
+//   height: 40px;
+//   border-radius: 50%;
+//   background: #ffffff;
+//   color: #000000;
+//   font-size: 22px;
+//   cursor: pointer;
+//   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 
-  &:hover {
-    color: #000000;
-  }
+//   &:hover {
+//     color: #000000;
+//   }
 
-  @media (max-width: 768px) {
-    width: 30px;
-    height: 30px;
-    font-size: 18px;
-  }
-`;
+//   @media (max-width: 768px) {
+//     width: 30px;
+//     height: 30px;
+//     font-size: 18px;
+//   }
+// `;
 
 const Title = styled.div`
   display: -webkit-box;

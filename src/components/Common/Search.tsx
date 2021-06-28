@@ -2,8 +2,7 @@ import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { PostType } from 'components/Main/PostList';
 import { graphql, Link, useStaticQuery } from 'gatsby';
-import React, { ChangeEvent, SetStateAction } from 'react';
-import { Dispatch } from 'react';
+import React, { ChangeEvent } from 'react';
 import { useState } from 'react';
 import { ReactElement } from 'react';
 

@@ -67,8 +67,7 @@ const ThumbnailImage = styled(Img)`
   border-radius: 10px;
 
   @media (max-width: 768px) {
-    width: 150px;
-    height: 100%;
+    display: none;
   }
 `;
 
@@ -109,6 +108,7 @@ const CategoryItem = styled.div`
   overflow: hidden;
   -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
+  flex: 0 0 auto;
   margin: 2.5px 5px;
   padding: 3px 5px;
   border-radius: 5px;

@@ -47,17 +47,12 @@ function PostItem({
 const PostItemWrapper = styled(Link)`
   display: flex;
   flex-direction: row;
-  max-height: 200px;
   border-radius: 10px;
   transition: 0.3s box-shadow;
   cursor: pointer;
 
   &:hover {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-  }
-
-  @media (max-width: 768px) {
-    max-height: 150px;
   }
 `;
 
@@ -81,7 +76,7 @@ const PostItemContent = styled.div`
 const Title = styled.div`
   display: -webkit-box;
   overflow: hidden;
-  -webkit-line-clamp: 1;
+  -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   margin-bottom: 5px;
   font-size: 20px;
@@ -96,9 +91,7 @@ const Date = styled.div`
 
 const Category = styled.div`
   display: flex;
-  flex-wrap: no-wrap;
-  overflow-x: scroll;
-  overflow-y: hidden;
+  flex-wrap: wrap;
   margin: 5px -5px;
   margin-top: auto;
 `;
@@ -128,7 +121,7 @@ const Summary = styled.div`
   opacity: 0.8;
 
   @media (max-width: 768px) {
-    -webkit-line-clamp: 1;
+    -webkit-line-clamp: 2;
   }
 `;
 

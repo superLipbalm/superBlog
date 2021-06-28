@@ -1,6 +1,6 @@
 ---
 date: '2021-06-20'
-title: '프로그래머스[Level3] 베스트앨범'
+title: '프로그래머스[Level 3] 베스트앨범'
 categories: ['프로그래머스', '알고리즘', '코딩테스트']
 summary: '프로그래머스 코딩테스트 연습, 베스트앨범.'
 thumbnail: '../images/programmers_level3.png'

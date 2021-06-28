@@ -1,6 +1,6 @@
 ---
 date: '2021-06-18'
-title: '프로그래머스[Level2] JadenCase 문자열 만들기'
+title: '프로그래머스[Level 2] JadenCase 문자열 만들기'
 categories: ['프로그래머스', '알고리즘', '코딩테스트']
 summary: '프로그래머스 코딩테스트 연습, JadenCase 문자열 만들기.'
 thumbnail: '../images/programmers_level2.png'

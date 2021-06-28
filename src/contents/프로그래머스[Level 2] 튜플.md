@@ -1,6 +1,6 @@
 ---
 date: '2021-06-06'
-title: '프로그래머스[Level2] 튜플'
+title: '프로그래머스[Level 2] 튜플'
 categories: ['프로그래머스', '알고리즘', '코딩테스트']
 summary: '프로그래머스 코딩테스트 연습, 튜플'
 thumbnail: '../images/programmers_level2.png'

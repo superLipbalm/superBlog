@@ -1,6 +1,6 @@
 ---
 date: '2021-06-19'
-title: '프로그래머스[Level3] 이중우선순위큐'
+title: '프로그래머스[Level 3] 이중우선순위큐'
 categories: ['프로그래머스', '알고리즘', '코딩테스트']
 summary: '프로그래머스 코딩테스트 연습, 이중우선순위큐'
 thumbnail: '../images/programmers_level3.png'

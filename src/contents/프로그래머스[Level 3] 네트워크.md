@@ -1,6 +1,6 @@
 ---
 date: '2021-06-28'
-title: '프로그래머스[Level 3] 네트워크'
+title: '[프로그래머스/JavaScript] 네트워크'
 categories: ['프로그래머스', '알고리즘', '코딩테스트']
 summary: '프로그래머스 코딩테스트 연습, 네트워크.'
 thumbnail: '../images/programmers_level3.png'
@@ -44,13 +44,11 @@ thumbnail: '../images/programmers_level3.png'
 
 ## 코드
 
----
-
 ### 처음 통과한 코드
 
 ```
 function solution(n, computers) {
-    var answer = [];
+    let answer = [];
 
     for(let i = 0;i < n;i++){
         findNetwork(i, []);
@@ -85,7 +83,7 @@ function solution(n, computers) {
 
 ```
 function solution(n, computers) {
-    var answer = 0;
+    let answer = 0;
     const visited = new Array(n).fill(false);
 
     for(let i = 0;i < n;i++){
@@ -113,8 +111,6 @@ function solution(n, computers) {
   - visited 배열에서 해당 노드가 true라면 이미 해당 노드가 포함된 네트워크를 셋다는 뜻이므로 탐색종료.
 
 ## 풀이
-
----
 
 - DFS를 이용해 쉽게 풀 수 있음.
 - 노드 하나를 선택해 DFS로 탐색.

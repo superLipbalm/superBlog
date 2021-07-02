@@ -20,7 +20,7 @@ const ScrollBar = styled.div`
 
   &::-webkit-scrollbar-thumb {
     background: rgba(0, 0, 0, 0.3);
-    // border-radius: 5px;
+    border-radius: 5px;
   }
 `;
 

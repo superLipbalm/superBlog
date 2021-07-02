@@ -1,14 +1,12 @@
 ---
 date: '2021-06-06'
-title: '프로그래머스[Level 2] 튜플'
+title: '[프로그래머스/JavaScript] 튜플'
 categories: ['프로그래머스', '알고리즘', '코딩테스트']
 summary: '프로그래머스 코딩테스트 연습, 튜플'
 thumbnail: '../images/programmers_level2.png'
 ---
 
 ## 문제
-
----
 
 > 출처: 프로그래머스 코딩테스트 연습, 튜플<br> https://programmers.co.kr/learn/courses/30/lessons/64065?language=javascript
 
@@ -85,11 +83,9 @@ thumbnail: '../images/programmers_level2.png'
 
 ## 코드
 
----
-
 ```
 function solution(s) {
-  var answer = [];
+  let answer = [];
   let set = s
     .slice(2, s.length - 2)
     .split('},{')
@@ -110,8 +106,6 @@ function solution(s) {
 ```
 
 ## 풀이
-
----
 
 - 집합들을 나타낸 문자열에서 각 집합을 파싱한 후 집합 길이가 오름차순이 되도록 정렬한다.
 - 각 집합들이 담긴 배열을 순회하며 각 집합에서 answer배열이 포함하고 있지 않은 숫자를 answer 배열에 넣어준다.

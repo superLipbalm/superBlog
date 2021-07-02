@@ -234,16 +234,22 @@ const HomeButton = styled(Link)`
   display: grid;
   place-items: center;
   position: absolute;
-  top: 10px;
+  top: 5px;
   left: 15px;
-  width: 20px;
-  height: 20px;
-  font-size: 18px;
+  width: 30px;
+  height: 30px;
+  font-size: 22px;
   color: rgba(150, 150, 150, 0.8);
   cursor: pointer;
 
   &:hover {
-    color: rgba(150, 150, 150, 0.8);
+    color: rgba(180, 180, 180, 0.8);
+    transform: scale(1.05);
+    box-shadow: 0 0 5px rgba(50, 60, 70, 0.5);
+  }
+
+  @media (max-width: 768px) {
+    left: 5px;
   }
 `;
 

@@ -1,6 +1,6 @@
 ---
 date: '2021-06-28'
-title: '프로그래머스[Level 3] 여행경로'
+title: '[프로그래머스/JavaScript] 여행경로'
 categories: ['프로그래머스', '알고리즘', '코딩테스트']
 summary: '프로그래머스 코딩테스트 연습, 여행경로.'
 thumbnail: '../images/programmers_level3.png'
@@ -9,8 +9,6 @@ thumbnail: '../images/programmers_level3.png'
 ## 문제
 
 > 출처: 프로그래머스 코딩테스트 연습, 여행경로<br>https://programmers.co.kr/learn/courses/30/lessons/43164
-
----
 
 ### 문제 설명
 
@@ -46,11 +44,9 @@ thumbnail: '../images/programmers_level3.png'
 
 ## 코드
 
----
-
 ```
 function solution(tickets) {
-    var answer = [];
+    let answer = [];
 
     findTravelRoute("ICN", Array(tickets.length).fill(false), []);
 

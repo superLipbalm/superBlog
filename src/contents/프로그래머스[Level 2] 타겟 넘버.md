@@ -1,6 +1,6 @@
 ---
 date: '2021-06-28'
-title: '프로그래머스[Level 2] 타겟 넘버'
+title: '[프로그래머스/JavaScript] 타겟 넘버'
 categories: ['프로그래머스', '알고리즘', '코딩테스트']
 summary: '프로그래머스 코딩테스트 연습, 타겟 넘버.'
 thumbnail: '../images/programmers_level2.png'
@@ -44,11 +44,9 @@ n개의 음이 아닌 정수가 있습니다. 이 수를 적절히 더하거나 
 
 ## 코드
 
----
-
 ```
 function solution(numbers, target) {
-    var answer = 0;
+    let answer = 0;
 
     findAnswer(0, 0);
 
@@ -73,8 +71,6 @@ function solution(numbers, target) {
 ```
 
 ## 풀이
-
----
 
 - 수들을 더하거나 빼는 방법들은 0에서 시작해 numbers의 다음 숫자를 두개의 자식노드(+항, -항)로 가지는 이진트리 형태로 나타낼 수 있음.
 - leaf node에 도달할때까지 이진트리를 따라 내려가며 더하고 뺏을 때 합이 타겟 넘버와 같다면 answer를 하나 더해줌.

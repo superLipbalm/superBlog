@@ -1,6 +1,6 @@
 ---
 date: '2021-06-19'
-title: '프로그래머스[Level 3] 이중우선순위큐'
+title: '[프로그래머스/JavaScript] 이중우선순위큐'
 categories: ['프로그래머스', '알고리즘', '코딩테스트']
 summary: '프로그래머스 코딩테스트 연습, 이중우선순위큐'
 thumbnail: '../images/programmers_level3.png'
@@ -46,8 +46,6 @@ thumbnail: '../images/programmers_level3.png'
 
 ## 코드
 
----
-
 ```
 function solution(operations) {
     const queue = [];
@@ -75,8 +73,6 @@ function solution(operations) {
 ```
 
 ## 풀이
-
----
 
 - Operations 배열의 문자열들에서 명령어와 숫자를 split 메서드를 이용하여 나눈다.
 - Swtich Case 문을 이용해 명령어에 따라 정해진 명령을 수행하도록 한다.

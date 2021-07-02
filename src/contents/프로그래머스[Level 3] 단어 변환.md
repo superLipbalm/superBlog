@@ -1,14 +1,12 @@
 ---
 date: '2021-06-28'
-title: '프로그래머스[Level 3] 단어 변환'
+title: '[프로그래머스/JavaScript] 단어 변환'
 categories: ['프로그래머스', '알고리즘', '코딩테스트']
 summary: '프로그래머스 코딩테스트 연습, 단어 변환.'
 thumbnail: '../images/programmers_level3.png'
 ---
 
 ## 문제
-
----
 
 > 출처: 프로그래머스 코딩테스트 연습, 단어 변환<br>https://programmers.co.kr/learn/courses/30/lessons/43163
 
@@ -50,11 +48,9 @@ target인 "cog"는 words 안에 없기 때문에 변환할 수 없습니다.
 
 ## 코드
 
----
-
 ```
 function solution(begin, target, words) {
-    var answer = 0;
+    let answer = 0;
     const visited = new Array(words.length).fill(false);
 
     findShortestProcess(begin, 0, visited);

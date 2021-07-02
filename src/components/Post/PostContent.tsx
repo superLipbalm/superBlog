@@ -97,7 +97,6 @@ const MarkdownRenderer = styled.div`
 
   // Horizontal Rule
   hr {
-    border: 1px solid rgba(0, 0, 0, 0.3);
     margin-bottom: 5px;
   }
 

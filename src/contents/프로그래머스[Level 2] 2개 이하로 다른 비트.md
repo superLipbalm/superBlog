@@ -1,3 +1,11 @@
+---
+date: '2021-07-11'
+title: '[프로그래머스/JavaScript] 2개 이하로 다른 비트'
+categories: ['프로그래머스', '알고리즘', '코딩테스트']
+summary: '프로그래머스 코딩테스트 연습, 2개 이하로 다른 비트.'
+thumbnail: '../images/programmers_level2.png'
+---
+
 ## 문제
 
 > 출처: 프로그래머스 코딩테스트 연습, 2개 이하로 다른 비트.

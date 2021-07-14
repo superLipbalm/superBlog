@@ -64,7 +64,7 @@ const PostTitle = styled.h3`
   word-wrap: break-word;
 
   @media (max-width: 768px) {
-    max-width: 150px;
+    width: 100px;
   }
 `;
 
@@ -109,7 +109,9 @@ const NavItem = styled(Link)`
   }
 
   @media (max-width: 768px) {
-    width: 225px;
+    margin: 5px;
+    padding: 5px;
+    width: 45vw;
   }
 `;
 

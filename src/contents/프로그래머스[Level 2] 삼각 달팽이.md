@@ -1,7 +1,7 @@
 ---
 date: '2021-07-12'
-title: '[프로그래머스/JavaScript] 삼각 달팽이'
-categories: ['프로그래머스', '알고리즘', '코딩테스트']
+title: '삼각 달팽이'
+categories: ['프로그래머스', 'JavaScript', '알고리즘', '코딩테스트']
 summary: '프로그래머스 코딩테스트 연습, 삼각 달팽이.'
 thumbnail: '../images/programmers_level2.png'
 ---

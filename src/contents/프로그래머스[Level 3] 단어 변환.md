@@ -1,7 +1,7 @@
 ---
 date: '2021-06-28'
-title: '[프로그래머스/JavaScript] 단어 변환'
-categories: ['프로그래머스', '알고리즘', '코딩테스트']
+title: '단어 변환'
+categories: ['프로그래머스', 'JavaScript', '알고리즘', '코딩테스트']
 summary: '프로그래머스 코딩테스트 연습, 단어 변환.'
 thumbnail: '../images/programmers_level3.png'
 ---

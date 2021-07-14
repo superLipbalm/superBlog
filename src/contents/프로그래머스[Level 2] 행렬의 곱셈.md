@@ -1,7 +1,7 @@
 ---
 date: '2021-07-06'
-title: '[프로그래머스/JavaScript] 행렬의 곱셈'
-categories: ['프로그래머스', '알고리즘', '코딩테스트']
+title: '행렬의 곱셈'
+categories: ['프로그래머스', 'JavaScript', '알고리즘', '코딩테스트']
 summary: '프로그래머스 코딩테스트 연습, 행렬의 곱셈.'
 thumbnail: '../images/programmers_level2.png'
 ---

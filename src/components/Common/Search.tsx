@@ -62,7 +62,7 @@ function Search(): ReactElement {
   });
 
   function handleInputChange(event: ChangeEvent<HTMLInputElement>) {
-    const query = event.target.value;
+    const query = event.target.value.toLowerCase();
     const posts = data.allMarkdownRemark.edges || [];
     const filteredPosts = posts.filter(post => {
       const { title, summary, categories } = post.node.frontmatter;

@@ -31,7 +31,10 @@ function PostItem({
     <PostItemWrapper to={link}>
       <ThumbnailImage fluid={fluid} alt="Post Item Image" />
       <PostItemContent>
-        <Title>{title}</Title>
+        <Title>
+          <span>[{categories[0]}] </span>
+          {title}
+        </Title>
         <Summary>{summary}</Summary>
         <Category>
           {categories.map(category => (
@@ -81,6 +84,12 @@ const Title = styled.div`
   margin-bottom: 5px;
   font-size: 20px;
   font-weight: 700;
+
+  span {
+    @media (max-width: 768px) {
+      display: none;
+    }
+  }
 `;
 
 const Date = styled.div`

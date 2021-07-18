@@ -17,13 +17,13 @@ interface PostNavProps {
 }
 
 function PostNav({ prev, next }: PostNavProps): ReactElement {
-  const prevPostTitle = prev?.title;
-  const nextPostTitle = next?.title;
+  const [prevPost, prevPostTitle] = [prev?.slug, prev?.title];
+  const [nextPost, nextPostTitle] = [next?.slug, next?.title];
 
   return (
     <PostNavWrapper>
-      {prev && (
-        <NavItem to={prev.slug}>
+      {prevPost && (
+        <NavItem to={prevPost}>
           <ButtonIcon>
             <FontAwesomeIcon icon={faArrowLeft} />
           </ButtonIcon>
@@ -32,8 +32,8 @@ function PostNav({ prev, next }: PostNavProps): ReactElement {
           </PrevPostInfo>
         </NavItem>
       )}
-      {next && (
-        <NavItem to={next.slug} style={{ marginLeft: 'auto' }}>
+      {nextPost && (
+        <NavItem to={nextPost} style={{ marginLeft: 'auto' }}>
           <NextPostInfo>
             다음 포스트<PostTitle>{nextPostTitle}</PostTitle>
           </NextPostInfo>

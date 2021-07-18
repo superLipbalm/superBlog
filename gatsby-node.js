@@ -53,6 +53,9 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
               fields {
                 slug
               }
+              frontmatter {
+                title
+              }
             }
           }
         }
@@ -90,8 +93,18 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
           prev:
             index === posts.length - 1
               ? undefined
-              : posts[index + 1].node.fields.slug,
-          next: index === 0 ? undefined : posts[index - 1].node.fields.slug,
+              : {
+                  slug: posts[index + 1].node.fields.slug,
+                  title: posts[index + 1].node.frontmatter.title,
+                },
+
+          next:
+            index === 0
+              ? undefined
+              : {
+                  slug: posts[index - 1].node.fields.slug,
+                  title: posts[index - 1].node.frontmatter.title,
+                },
         },
       };
 

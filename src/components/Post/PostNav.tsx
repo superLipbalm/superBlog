@@ -6,18 +6,24 @@ import React from 'react';
 import { ReactElement } from 'react';
 
 interface PostNavProps {
-  prev?: string;
-  next?: string;
+  prev?: {
+    slug: string;
+    title: string;
+  };
+  next?: {
+    slug: string;
+    title: string;
+  };
 }
 
 function PostNav({ prev, next }: PostNavProps): ReactElement {
-  const prevPostTitle = prev?.slice(1, prev.length - 1);
-  const nextPostTitle = next?.slice(1, next.length - 1);
+  const prevPostTitle = prev?.title;
+  const nextPostTitle = next?.title;
 
   return (
     <PostNavWrapper>
       {prev && (
-        <NavItem to={prev}>
+        <NavItem to={prev.slug}>
           <ButtonIcon>
             <FontAwesomeIcon icon={faArrowLeft} />
           </ButtonIcon>
@@ -27,7 +33,7 @@ function PostNav({ prev, next }: PostNavProps): ReactElement {
         </NavItem>
       )}
       {next && (
-        <NavItem to={next} style={{ marginLeft: 'auto' }}>
+        <NavItem to={next.slug} style={{ marginLeft: 'auto' }}>
           <NextPostInfo>
             다음 포스트<PostTitle>{nextPostTitle}</PostTitle>
           </NextPostInfo>

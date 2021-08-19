@@ -1,5 +1,5 @@
 ---
-date: '2021-07-11'
+date: '2021-08-19'
 title: '이터러블과 이터레이터. for...of는 어떻게 동작할까?'
 categories: ['JavaScript']
 summary: 'for...of는 어떻게 동작할까?'

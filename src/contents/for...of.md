@@ -97,12 +97,10 @@ iterator의 next()를 계속 호출해 value를 변수에 할당하며 반복문
 
 [for...of - JavaScript | MDN (mozilla.org)](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Statements/for...of)
 
-[Array.prototype[@@iterator]() - JavaScript | MDN (mozilla.org)](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/@@iterator)
+[Array.prototype\[@@iterator\]() - JavaScript | MDN (mozilla.org)](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/@@iterator)
 
 [반복기 및 생성기 - JavaScript | MDN (mozilla.org)](https://developer.mozilla.org/ko/docs/Web/JavaScript/Guide/Iterators_and_Generators)
 
 [function\* - JavaScript | MDN (mozilla.org)](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Statements/function*)
-
-원래 주말에 올리고자 마음먹었는데 수요일까지 와버렸네요ㅎ
 
 피드백은 언제나 환영합니다! 부족한 글 읽어주셔서 감사합니다!🙇‍♂️

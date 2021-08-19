@@ -176,8 +176,14 @@ const SearchInput = styled.input`
 
 const SearchResultList = styled.div`
   display: flex;
+  max-height: 33vh;
   flex-direction: column;
   align-items: center;
+  overflow-y: scroll;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 `;
 
 const SearchResultItem = styled(Link)`
@@ -187,7 +193,7 @@ const SearchResultItem = styled(Link)`
   background-color: #29323c;
   border-bottom: 1px solid #39424c;
   color: #e0e0e0;
-  transition: transform 0.3s ease;
+  transition: background-color 0.3s ease;
 
   &:last-child {
     border-radius: 0 0 3px 3px;
@@ -196,7 +202,7 @@ const SearchResultItem = styled(Link)`
   &:hover {
     color: #e0e0e0;
     border-bottom: none;
-    transform: scale(1.05);
+    background-color: #39424c;
     box-shadow: 0 0 5px rgba(50, 60, 70, 0.5);
   }
 
@@ -244,7 +250,6 @@ const HomeButton = styled(Link)`
 
   &:hover {
     color: rgba(180, 180, 180, 0.8);
-    transform: scale(1.05);
     box-shadow: 0 0 5px rgba(50, 60, 70, 0.5);
   }
 

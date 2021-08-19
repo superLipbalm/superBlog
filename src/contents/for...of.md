@@ -3,7 +3,7 @@ date: '2021-08-19'
 title: '이터러블과 이터레이터. for...of는 어떻게 동작할까?'
 categories: ['JavaScript']
 summary: 'for...of는 어떻게 동작할까?'
-thumbnail: '../images/intro.jpg'
+thumbnail: '../images/com.jpg'
 ---
 
 저기요! 인상이 참 선하신데...
@@ -12,20 +12,24 @@ thumbnail: '../images/intro.jpg'
 
 ES6이전의 자바스크립트에서 배열은 다음과 같은 방법으로 순회하였습니다.
 
+```
 var arr = [1, 2, 3];
 
 for (var i = 0; i < arr.length; i++) {
-console.log(arr[i]);
+	console.log(arr[i]);
 }
+```
 
 배열의 length 프로퍼티와 인덱스를 사용해서요.
 
-그리고 ES6부터는 for ... of 명령문을 이용해 더 간결한 선언적 표현으로 배열을 순회 할 수 있게되었습니다.
+그리고 ES6부터는 for ... of 명령문을 이용해 더 간결한 선언적 표현으로 배열을 순회 할 수 있게되었습니다. 아래의 코드처럼요.
 
+```
 const arr = [1, 2, 3];
 for (const el of arr) {
-console.log(el);
+	console.log(el);
 }
+```
 
 그런데 여기서 궁금증이 생깁니다. for ... of는 어떻게 동작하는 것일까요?
 
@@ -33,17 +37,19 @@ console.log(el);
 
 우리는 for ... of를 이용해 배열처럼 숫자 인덱스로 요소에 접근할 수 없는 Map, Set 객체 등도 순회 할 수 있습니다.
 
+```
 const map = new Map([['a', 1], ['b', 1], ['c', 1]]);
 
 for (const el of map) {
-console.log(el);
+	console.log(el);
 }
 
 const set = new Set([1, 2, 2, 3, 4]);
 
 for (const el of set) {
-console.log(el);
+	console.log(el);
 }
+```
 
 따라서 숫자 인덱스를 사용하는 방법은 아닙니다. 그렇다면 어떻게 순회하는 것일까요?
 
@@ -65,6 +71,7 @@ done은 iterator의 작업이 모두 끝났는지를 나타내는 속성으로 �
 
 value는 iterator로 부터 반환되는 모든 자바스크립트 값입니다.
 
+```
 const arr = [1, 2, 3];
 const iter = arr[Symbol.iterator]();
 
@@ -72,6 +79,7 @@ console.log(iter.next()); // { value: 1, done: false }
 console.log(iter.next()); // { value: 2, done: false }
 console.log(iter.next()); // { value: 3, done: false }
 console.log(iter.next()); // { value: undefined, done: true }
+```
 
 이제 iterable과 iterator에 대해 알아보았으니, 다시 for ... of의 비밀에 대해 알아보도록 합시다.
 
@@ -85,10 +93,16 @@ iterator의 next()를 계속 호출해 value를 변수에 할당하며 반복문
 
 신기하고 재미있는 iteration 프로토콜에 대한 자세한 내용들을 아래 링크에서 확인해보세요!
 
-Iteration protocols - JavaScript | MDN (mozilla.org)
-for...of - JavaScript | MDN (mozilla.org)
-Array.prototype[@@iterator]() - JavaScript | MDN (mozilla.org)
-반복기 및 생성기 - JavaScript | MDN (mozilla.org)
-function\* - JavaScript | MDN (mozilla.org)
+[Iteration protocols - JavaScript | MDN (mozilla.org)](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Iteration_protocols)
 
-피드백은 언제나 환영합니다! 부족한 글 읽어주셔서 감사합니다!:man-bowing:
+[for...of - JavaScript | MDN (mozilla.org)](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Statements/for...of)
+
+[Array.prototype[@@iterator]() - JavaScript | MDN (mozilla.org)](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/@@iterator)
+
+[반복기 및 생성기 - JavaScript | MDN (mozilla.org)](https://developer.mozilla.org/ko/docs/Web/JavaScript/Guide/Iterators_and_Generators)
+
+[function\* - JavaScript | MDN (mozilla.org)](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Statements/function*)
+
+원래 주말에 올리고자 마음먹었는데 수요일까지 와버렸네요ㅎ
+
+피드백은 언제나 환영합니다! 부족한 글 읽어주셔서 감사합니다!🙇‍♂️
